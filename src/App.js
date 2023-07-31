@@ -1,23 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import MyButton from './components/MyButton';
+import Profile from './components/Profile';
+
 
 function App() {
+  
+  const user = {
+    name: 'Santa Cruz',
+    imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+    imageSize: 90,
+  };
+
+   const fruits = [
+    { name : 'banana', isSweet: true, id : 1 },
+    { name : 'orange', isSweet: false, id : 2 },
+    { name : 'guava', isSweet: false, id : 3 },
+    { name : 'apple', isSweet: true, id : 4 },
+   ]
+
+   const fruitList = fruits.map(fruit =>
+     <div key={fruit.id}>
+      <h2 style={{ color : fruit.isSweet ? 'red' : 'purple' }}> {fruit.name} </h2>
+     </div>
+    )
+
+    const [count, setCount] = useState(0)
+
+    function justClick(params) {
+      setCount(count + 1)
+    }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> {user.name} </h1>
+      <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
+
+      <MyButton count = {count} justClick = {justClick} fruitList={fruitList} />
+      <MyButton count = {count} justClick = {justClick} />
+      <Profile isProgrammingLanguage = {true} language = 'python' />
+      <Profile isProgrammingLanguage = {false} language = 'Cruz' />
+      <Profile isProgrammingLanguage = {true} language = 'Javascript' />
     </div>
   );
 }
