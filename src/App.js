@@ -2,6 +2,8 @@ import './App.css';
 import { useState } from 'react';
 import MyButton from './components/MyButton';
 import Profile from './components/Profile';
+import Child from './components/ParentProp';
+import PropChallenge from './components/PropChallenge';
 
 
 function App() {
@@ -38,11 +40,22 @@ function App() {
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
 
+      <Child />
       <MyButton count = {count} justClick = {justClick} fruitList={fruitList} />
       <MyButton count = {count} justClick = {justClick} />
       <Profile isProgrammingLanguage = {true} language = 'python' />
       <Profile isProgrammingLanguage = {false} language = 'Cruz' />
       <Profile isProgrammingLanguage = {true} language = 'Javascript' />
+      <div>
+        <h1>Notable Scientists</h1>
+        <PropChallenge  person={{name:'Maria Skłodowska-Curie', profession:'physicist and chemist', awards:'Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal',
+        img: 'https://i.imgur.com/szV5sdG.jpg', discovered : 'polonium (element)'
+        }} />
+
+        <PropChallenge person={{name:'Katsuko Saruhashi', profession:'geochemist', awards:'Miyake Prize for geochemistry, Tanaka Prize',
+        img: 'https://i.imgur.com/YfeOqp2.jpg', discovered : 'a method for measuring carbon dioxide in seawater'
+        }} />
+    </div>
     </div>
   );
 }
