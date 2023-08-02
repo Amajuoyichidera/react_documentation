@@ -3,7 +3,6 @@ import React from 'react'
 function PropChallenge({ person }) {
     return (
         <div>
-            
             <h2> {person.name} </h2>
             <img className="avatar" src={person.img} alt={person.name} width={70} height={70} />
             <ul>

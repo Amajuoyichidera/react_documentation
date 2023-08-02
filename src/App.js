@@ -4,6 +4,7 @@ import MyButton from './components/MyButton';
 import Profile from './components/Profile';
 import Child from './components/ParentProp';
 import PropChallenge from './components/PropChallenge';
+import ConditionalRendering from './components/ConditionalRendering';
 
 
 function App() {
@@ -39,7 +40,13 @@ function App() {
     <div className="App">
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
-
+      <div>
+       <h1>those marked are food</h1>
+       <ConditionalRendering isFood = {true} name='Rice' />
+       <ConditionalRendering isFood = {false} name='stick' />
+       <ConditionalRendering isFood = {true} name='Beans' />
+      </div>
+      
       <Child />
       <MyButton count = {count} justClick = {justClick} fruitList={fruitList} />
       <MyButton count = {count} justClick = {justClick} />
