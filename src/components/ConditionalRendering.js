@@ -15,7 +15,7 @@ function ConditionalRendering({ isFood, name}) {
    
     return (
         <div>
-            <h1>{isFood ? name + '✔' : name + '❌' }</h1>
+            <h1>{isFood ? name + '✔' : name + '❌' } </h1>
             <h3>Oil: {oil}</h3>
             <h3>Ingredients: {ingredient}</h3>
             <h3>Spicy: {spicy}</h3>
@@ -27,7 +27,6 @@ function ConditionalRendering({ isFood, name}) {
 //   }
 //   return <h2>{name}❌</h2>
     
-
 
 // this works too
     // return (
@@ -51,6 +50,5 @@ function ConditionalRendering({ isFood, name}) {
     // )
 
 }
-
 
 export default ConditionalRendering
