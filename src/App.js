@@ -34,10 +34,24 @@ function App() {
       setCount(count + 1)
     }
 
+   const [color, setColor] = useState('orange')
 
-
+    function changeBackground(e) {
+      setColor(e.target.value)
+    }
+   
   return (
     <div className="App">
+      
+      <div style={{ backgroundColor: color, color: 'white', padding: '20px'}}>
+        <h3>select color to change background</h3>
+        <select onChange={changeBackground}>
+          <option value='orange'>orange</option>
+          <option value='green'>green</option>
+          <option value='black'>black</option>
+        </select>
+      </div>
+     
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
       <div>
