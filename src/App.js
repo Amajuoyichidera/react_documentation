@@ -5,7 +5,7 @@ import Profile from './components/Profile';
 import Child from './components/ParentProp';
 import PropChallenge from './components/PropChallenge';
 import ConditionalRendering from './components/ConditionalRendering';
-
+import SimpleTodo from './components/SimpleTodo'
 
 function App() {
   
@@ -51,6 +51,8 @@ function App() {
           <option value='black'>black</option>
         </select>
       </div>
+
+      <SimpleTodo />
      
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
