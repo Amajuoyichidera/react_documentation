@@ -30,7 +30,7 @@ function App() {
 
     const [count, setCount] = useState(0)
 
-    function justClick(params) {
+    function justClick() {
       setCount(count + 1)
     }
 

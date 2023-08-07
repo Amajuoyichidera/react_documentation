@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 
+
 function SimpleTodo() {
-    const [name, setName] = useState('')
-    const [todos, setTodos] = useState([])
-    let id = 0
+    const [name, setName] = useState('');
+    const [todos, setTodos] = useState([]);
+    let id = 0;
   return (
     <div>
         <h1>My Todo</h1>

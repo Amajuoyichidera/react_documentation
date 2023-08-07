@@ -3,6 +3,7 @@ import React from 'react'
 function ConditionalRendering({ isFood, name}) {
     
     let oil,ingredient,spicy;
+    
     if (name === 'Beans') {
         oil = 'red oil';
         ingredient = 'yam';
