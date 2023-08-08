@@ -5,7 +5,9 @@ import Profile from './components/Profile';
 import Child from './components/ParentProp';
 import PropChallenge from './components/PropChallenge';
 import ConditionalRendering from './components/ConditionalRendering';
-import SimpleTodo from './components/SimpleTodo'
+import SimpleTodo from './components/SimpleTodo';
+import SimpleFilter from './components/SimpleFilter';
+import Panel from './components/Panel';
 
 function App() {
   
@@ -16,11 +18,18 @@ function App() {
   };
 
    const fruits = [
-    { name : 'banana', isSweet: true, id : 1 },
-    { name : 'orange', isSweet: false, id : 2 },
-    { name : 'guava', isSweet: false, id : 3 },
-    { name : 'apple', isSweet: true, id : 4 },
+    { name : 'banana', isSweet: true, id : 0 },
+    { name : 'orange', isSweet: false, id : 1 },
+    { name : 'guava', isSweet: false, id : 2 },
+    { name : 'apple', isSweet: true, id : 3 },
    ]
+
+   const [myFruit, setMyFruit] = useState(fruits)
+   const [fruitId, setFruitId] = useState(0)
+
+   const myId = myFruit.find(fruit =>
+      fruit.id === fruitId
+    )
 
    const fruitList = fruits.map(fruit =>
      <div key={fruit.id}>
@@ -39,10 +48,40 @@ function App() {
     function changeBackground(e) {
       setColor(e.target.value)
     }
+
+    // const [activeIndex, setActiveIndex] = useState(0);
    
   return (
     <div className="App">
       
+      <Panel title='about' description='about me' />
+      <Panel title='contact' description='contact me' />
+      
+      {/* <Panel title='about' isActive={activeIndex === 0}
+        onShow={() => setActiveIndex(0)}>
+        About Me
+      </Panel>
+
+      <Panel title='description' isActive={activeIndex === 1}
+        onShow={() => setActiveIndex(1)}>
+        describe Me
+      </Panel> */}
+
+
+
+      <h1>Fruits i love most</h1>
+      {myFruit.map(fruit =>
+         <div>
+          <h2>{fruit.name}</h2>
+          <button onClick={() =>
+          setFruitId(fruit.id)
+          }>Select</button>
+         </div>
+        )}
+        <h1>You Selected {myId.name}</h1>
+      
+
+
       <div style={{ backgroundColor: color, color: 'white', padding: '20px'}}>
         <h3>select color to change background</h3>
         <select onChange={changeBackground}>
@@ -53,6 +92,7 @@ function App() {
       </div>
 
       <SimpleTodo />
+      <SimpleFilter />
      
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 
-
 function SimpleTodo() {
     const [name, setName] = useState('');
     const [todos, setTodos] = useState([]);
