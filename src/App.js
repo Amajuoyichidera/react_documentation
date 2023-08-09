@@ -53,7 +53,7 @@ function App() {
    
   return (
     <div className="App">
-      
+       <h1>choose one</h1>
       <Panel title='about' description='about me' />
       <Panel title='contact' description='contact me' />
       
