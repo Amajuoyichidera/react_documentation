@@ -6,7 +6,6 @@ function Parent({ children }) {
     )
 }
 
-
 export default function Child() {
     return (
         <Parent>

@@ -11,7 +11,6 @@ function Profile({ isProgrammingLanguage, language }) {
     </div>
     )
 
-    
   return (
     <div>
         {isProgrammingLanguage ? language + '✔' : language }

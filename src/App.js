@@ -67,8 +67,6 @@ function App() {
         describe Me
       </Panel> */}
 
-
-
       <h1>Fruits i love most</h1>
       {myFruit.map(fruit =>
          <div>
@@ -79,8 +77,6 @@ function App() {
          </div>
         )}
         <h1>You Selected {myId.name}</h1>
-      
-
 
       <div style={{ backgroundColor: color, color: 'white', padding: '20px'}}>
         <h3>select color to change background</h3>
