@@ -8,6 +8,8 @@ import ConditionalRendering from './components/ConditionalRendering';
 import SimpleTodo from './components/SimpleTodo';
 import SimpleFilter from './components/SimpleFilter';
 import Panel from './components/Panel';
+import UseContextHook from './components/UseContextHook';
+import { myUserContext } from './components/UseContextHook';
 
 function App() {
   
@@ -51,8 +53,19 @@ function App() {
 
     // const [activeIndex, setActiveIndex] = useState(0);
    
+    const myUser = {
+      name: 'Kingsley David',
+      age: 19,
+      occupation: 'Full Stack Developer'
+    }
+   
   return (
     <div className="App">
+      
+      <myUserContext.Provider value={myUser}>
+        <UseContextHook />
+      </myUserContext.Provider>
+
        <h1>choose one</h1>
       <Panel title='about' description='about me' />
       <Panel title='contact' description='contact me' />
@@ -92,6 +105,7 @@ function App() {
      
       <h1> {user.name} </h1>
       <img src={user.imageUrl} style={ { width: user.imageSize, height: user.imageSize }} />
+      
       <div>
        <h1>those marked are food</h1>
        <ConditionalRendering isFood = {true} name='Rice' />
@@ -105,6 +119,7 @@ function App() {
       <Profile isProgrammingLanguage = {true} language = 'python' />
       <Profile isProgrammingLanguage = {false} language = 'Cruz' />
       <Profile isProgrammingLanguage = {true} language = 'Javascript' />
+      
       <div>
         <h1>Notable Scientists</h1>
         <PropChallenge  person={{name:'Maria Skłodowska-Curie', profession:'physicist and chemist', awards:'Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal',
