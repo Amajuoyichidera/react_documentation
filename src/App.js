@@ -10,6 +10,7 @@ import SimpleFilter from './components/SimpleFilter';
 import Panel from './components/Panel';
 import UseContextHook from './components/UseContextHook';
 import { myUserContext } from './components/UseContextHook';
+import UseEffectHook from './components/UseEffectHook';
 
 function App() {
   
@@ -61,7 +62,7 @@ function App() {
    
   return (
     <div className="App">
-      
+       <UseEffectHook />
       <myUserContext.Provider value={myUser}>
         <UseContextHook />
       </myUserContext.Provider>
