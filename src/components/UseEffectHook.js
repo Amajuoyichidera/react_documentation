@@ -4,7 +4,8 @@ import axios from 'axios'
 
 function UseEffectHook() {
     const [data, setData] = useState([]);
-
+    const [count, setCount] = useState(0)
+ 
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -17,6 +18,17 @@ function UseEffectHook() {
         
         fetchData();
     },[])
+    
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount(count + 1)
+        }, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [])
 
   return (
     <div>
@@ -27,6 +39,7 @@ function UseEffectHook() {
               <p>Email: {user.email}</p>
             </div>
         ))}
+        <h2>Count: {count} </h2>
     </div>
   )
 }
