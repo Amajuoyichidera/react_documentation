@@ -28,7 +28,7 @@ function UseEffectHook() {
         return () => {
             clearInterval(interval)
         }
-    }, [])
+    }, [count])
 
   return (
     <div>
